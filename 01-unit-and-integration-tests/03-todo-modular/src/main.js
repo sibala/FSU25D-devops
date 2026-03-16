@@ -1,32 +1,4 @@
-/**
- * 
- * Data logic
- */
-let todos = [];
-let nextId = 1;
-
-function addTodo(text) {
-  let trimmedText = text.trim();
-  if (!trimmedText) return;
-
-  let id = nextId++;
-  let todo = { id: id, text: trimmedText, done: false }
-  todos.push(todo);
-  return todo;
-}
-
-function removeTodo(id) {
-  todos = todos.filter(t => t.id !== id);
-}
-
-function getTodoCount() {
-  return todos.length
-}
-
-function resetTodos() {
-  todos = [];
-  nextId = 1;
-}
+import {addTodo, removeTodo, getTodoCount, resetTodos} from "./todo-model.js"
 
 /**
  * DOM
