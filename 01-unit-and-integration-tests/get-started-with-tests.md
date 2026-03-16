@@ -1,4 +1,4 @@
-# Instructions
+# Get Started With Tests
 
 ## 1. Install NodeJS
 - [Download and install NodeJS](https://nodejs.org/en/download)

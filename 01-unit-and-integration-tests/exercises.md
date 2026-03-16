@@ -47,12 +47,9 @@ Starting from `02-todo-refactored-functions`, split the code into separate files
 ## Exercise 04-todo-tests
 Starting from `03-todo-modular`, set up a test environment and write unit and integration tests.
 
-### a) Setup
-- Run `npm init -y` to create a `package.json`
-- Run `npm install -D vitest jsdom eslint` to install dev dependencies
-- Create `vitest.config.js` in the project root (see instructions.md for configuration)
-- Run `npx eslint --init` to configure ESLint
-- Add `"test": "vitest run"` and `"lint": "eslint src/"` to the `scripts` section in `package.json`
+### a) Setup 
+(Get started with tests)[get-started-with-tests.md]
+
 
 ### b) Unit tests
 - Create `tests/unit/todo-model.test.js`
