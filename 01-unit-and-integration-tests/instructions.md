@@ -157,3 +157,4 @@ describe("app integration", () => {
 - [ESLint — Getting Started](https://eslint.org/docs/latest/use/getting-started)
 - [ESLint — Configuring Rules](https://eslint.org/docs/latest/use/configure/rules)
 - [MDN — module.exports](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+- [Atlassian — What is DevOps?](https://www.atlassian.com/devops)
