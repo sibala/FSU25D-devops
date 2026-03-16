@@ -1,7 +1,5 @@
-let list = document.getElementById("todo-list");
-let stats = document.getElementById("todo-stats");
-
 export function addTodoElement(todo, onRemove) {
+  let list = document.getElementById("todo-list");
   let li = document.createElement("li");
   li.className = "todo-item";
   li.dataset.id = todo.id;
@@ -23,9 +21,11 @@ export function addTodoElement(todo, onRemove) {
 }
 
 export function updateStats(count) {
+  let stats = document.getElementById("todo-stats");
   stats.textContent = count + " sysslor";
 }
 
 export function clearList() {
+  let list = document.getElementById("todo-list");
   list.innerHTML = "";
 }
