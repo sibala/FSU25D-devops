@@ -48,7 +48,7 @@ Starting from `02-todo-refactored-functions`, split the code into separate files
 Starting from `03-todo-modular`, set up a test environment and write unit and integration tests.
 
 ### a) Setup 
-[Get started with tests](get-started-with-tests.md)
+- Follow the guide: [Get started with tests](get-started-with-tests.md)
 
 
 ### b) Unit tests
