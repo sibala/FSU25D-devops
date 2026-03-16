@@ -24,7 +24,7 @@ describe("app integration", () => {
     addTodoElement(todo2, () => {})
 
     let list = document.getElementById('todo-list')
-    expect(list.children.length).toBe(1);
+    expect(list.children.length).toBe(2);
     expect(list.children[0].querySelector('.todo-text').textContent).toBe("Köp mjölk");
     expect(list.children[1].querySelector('.todo-text').textContent).toBe("Köp vete");
   })
