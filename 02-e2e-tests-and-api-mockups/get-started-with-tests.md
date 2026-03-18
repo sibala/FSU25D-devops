@@ -27,18 +27,10 @@ Package descriptions:
 
 
 ## 3. Configure `package.json`
-
-Add `"type": "module"` to enable ES module syntax (`import`/`export`):
-```json
-{
-  "type": "module"
-}
-```
-
 Add scripts:
 ```json
 "scripts": {
-  "test": "vitest run && npm run test:e2e",
+  "test": "vitest run",
   "test:e2e": "vite build && npx playwright test",
   "lint": "eslint src/",
   "preview": "vite preview"
@@ -46,8 +38,8 @@ Add scripts:
 ```
 
 Script descriptions:
-- `npm test` — Runs all tests (unit + integration + e2e)
-- `npm run test:e2e` — Builds the app and runs e2e tests with Playwright
+- `npm test` — Runs tests (unit + integration)
+- `npm run test:e2e` — Builds the app and runs e2e tests with Playwright 
 - `npm run lint` — Lints source files with ESLint
 - `npm run preview` — Serves the built app locally (used by Playwright)
 
