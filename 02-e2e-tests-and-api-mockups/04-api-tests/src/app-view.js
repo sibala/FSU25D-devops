@@ -27,6 +27,7 @@ export function renderPosts(posts) {
 
 export function renderTags(tags, onChange) {
   tagFilter.innerHTML = '<option value="">Alla</option>';
+  console.log(tags);
   tags.forEach((tag) => {
     let option = document.createElement("option");
     option.value = tag.slug;

@@ -15,7 +15,10 @@ form.addEventListener("submit", (e) => {
 
   addTodoElement(
     todo, 
-    removeTodo, 
+    () => {
+      removeTodo;
+      updateStats(getTodoCount());
+    },
     toggleTodo
   )
 

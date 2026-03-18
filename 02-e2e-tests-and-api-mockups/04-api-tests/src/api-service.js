@@ -2,6 +2,7 @@ const BASE_URL = "https://dummyjson.com";
 
 export async function fetchPosts() {
   let res = await fetch(BASE_URL + "/posts");
+  
   return res.json();
 }
 

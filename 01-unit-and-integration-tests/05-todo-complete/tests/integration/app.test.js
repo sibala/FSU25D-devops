@@ -1,5 +1,5 @@
 import { describe, test, expect, beforeEach, vi } from "vitest";
-import { addTodo, removeTodo, getTodoCount, resetTodos } from "../../src/todo-model.js";
+import { addTodo, removeTodo, getTodoCount, resetTodos, toggleTodo } from "../../src/todo-model.js";
 // import { addTodoElement, updateStats, clearList} from "../../src/todo-view.js";
 
 
@@ -64,5 +64,29 @@ describe("app integration", () => {
     updateStats(getTodoCount())
 
     expect(list.children.length).toBe(0)
+  })
+
+
+  test("Clicking the checkbox toggles the done class on the list item", async () => {
+    const { addTodoElement, updateStats, clearList } = await import("../../src/todo-view.js");
+    
+    let todo = addTodo('Köp mjölk');
+    addTodoElement(
+      todo, 
+      () => {}, 
+      toggleTodo
+    )
+
+    let list = document.getElementById('todo-list')
+    let li = list.children[0];
+    expect(list.children.length).toBe(1)
+    expect(li.classList.contains('done')).toBe(false);
+    
+    let checkbox = list.children[0].querySelector('.todo-done')
+    checkbox.click();
+    expect(li.classList.contains('done')).toBe(true);
+
+    checkbox.click();
+    expect(li.classList.contains('done')).toBe(false);
   })
 });

@@ -8,6 +8,7 @@ export function addTodoElement(todo, onRemove, onToggle) {
 
   let checkbox = document.createElement("input");
   checkbox.type = "checkbox"
+  checkbox.className = "todo-done";
   checkbox.addEventListener('click', (e) => {
     onToggle(todo.id)
     e.target.parentNode.classList.toggle('done')

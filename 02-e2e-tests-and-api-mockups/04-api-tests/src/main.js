@@ -20,7 +20,8 @@ async function handleTagChange(tag) {
 // Starta appen
 async function init() {
   try {
-    let [tags, postData] = await Promise.all([fetchTags(), fetchPosts()]);
+    let tags = await fetchTags();
+    let postData = await fetchPosts();
     model.tags = tags;
     model.posts = postData.posts;
     renderTags(tags, handleTagChange);
