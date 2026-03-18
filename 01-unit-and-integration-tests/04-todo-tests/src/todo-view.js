@@ -1,22 +1,37 @@
-export function addTodoElement(todo, onRemove) {
+export function addTodoElement(todo, onToggle, onRemove) {
   let list = document.getElementById("todo-list");
+
   let li = document.createElement("li");
   li.className = "todo-item";
   li.dataset.id = todo.id;
+
+  if (todo.done) {
+    li.classList.add("done");
+  }
+
+  let checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.checked = todo.done;
+
+  checkbox.addEventListener("click", () => {
+    onToggle(todo.id);
+    li.classList.toggle("done");
+  });
 
   let span = document.createElement("span");
   span.className = "todo-text";
   span.textContent = todo.text;
 
-  let btn = document.createElement("button");
-  btn.className = "todo-remove";
-  btn.textContent = "\u00d7";
-  btn.addEventListener("click", () => {
-    onRemove(todo.id)
+  let button = document.createElement("button");
+  button.className = "todo-remove";
+  button.textContent = "x";
+
+  button.addEventListener("click", () => {
+    onRemove();
     li.remove();
   });
 
-  li.append(span, btn);
+  li.append(checkbox, span, button);
   list.appendChild(li);
 }
 
