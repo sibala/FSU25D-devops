@@ -11,10 +11,6 @@ export function addTodo(text) {
   return todo;
 }
 
-export function getTodos() {
-  return todos;
-}
-
 export function removeTodo(id) {
   todos = todos.filter(t => t.id !== id);
 }
