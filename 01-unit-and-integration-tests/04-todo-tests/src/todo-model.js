@@ -23,3 +23,9 @@ export function resetTodos() {
   todos = [];
   nextId = 1;
 }
+
+export function toggleTodo(id) {
+  let todo = todos.find(t => t.id === id);
+  if (!todo) return;
+  todo.done = !todo.done;
+}
