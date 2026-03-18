@@ -1,4 +1,4 @@
-import {addTodo, removeTodo, getTodoCount, resetTodos} from "./todo-model.js"
+import {addTodo, removeTodo, getTodoCount, resetTodos, toggleTodo} from "./todo-model.js"
 import {addTodoElement, updateStats, clearList} from "./todo-view.js"
 
 let form = document.getElementById("todo-form");
@@ -13,10 +13,11 @@ form.addEventListener("submit", (e) => {
   let todo = addTodo(input.value)
   input.value = "";
 
-  addTodoElement(todo, () => { 
-    removeTodo(todo.id);
-    updateStats(getTodoCount())
-  })
+  addTodoElement(
+    todo, 
+    removeTodo, 
+    toggleTodo
+  )
 
   updateStats(getTodoCount())
 });

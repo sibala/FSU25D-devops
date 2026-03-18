@@ -1,10 +1,17 @@
 let list = document.getElementById("todo-list");
 let stats = document.getElementById("todo-stats");
 
-export function addTodoElement(todo, onRemove) {
+export function addTodoElement(todo, onRemove, onToggle) {
   let li = document.createElement("li");
   li.className = "todo-item";
   li.dataset.id = todo.id;
+
+  let checkbox = document.createElement("input");
+  checkbox.type = "checkbox"
+  checkbox.addEventListener('click', (e) => {
+    onToggle(todo.id)
+    e.target.parentNode.classList.toggle('done')
+  })
 
   let span = document.createElement("span");
   span.className = "todo-text";
@@ -18,7 +25,7 @@ export function addTodoElement(todo, onRemove) {
     li.remove();
   });
 
-  li.append(span, btn);
+  li.append(checkbox, span, btn);
   list.appendChild(li);
 }
 

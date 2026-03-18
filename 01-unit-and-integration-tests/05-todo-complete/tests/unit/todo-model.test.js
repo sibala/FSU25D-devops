@@ -1,6 +1,5 @@
 import { describe, test, expect, beforeEach } from "vitest";
-import { addTodo, removeTodo, getTodoCount, resetTodos, getTodos } from "../../src/todo-model.js";
-
+import { addTodo, removeTodo, getTodoCount, resetTodos, getTodos, toggleTodo } from "../../src/todo-model.js";
 
 describe("todo-model", () => {
     beforeEach(() => {
@@ -48,5 +47,29 @@ describe("todo-model", () => {
         removeTodo(todoA.id)
         expect(getTodoCount()).toBe(1)
         expect(getTodos()[0].text).toBe("B")
+    })
+
+    test("toggleTodo sets done to true", () => {
+        let todo = addTodo("A");
+        // expect(todo.done).toBeFalsy()
+        expect(todo.done).toBe(false)
+        toggleTodo(todo.id)
+        expect(todo.done).toBe(true)
+    })
+
+
+    test("toggleTodo on the same todo again sets done back to false", () => {
+        let todo = addTodo("A");
+        expect(todo.done).toBe(false)
+
+        toggleTodo(todo.id)
+        expect(todo.done).toBe(true)
+
+        toggleTodo(todo.id)
+        expect(todo.done).toBe(false)
+    })
+
+    test("toggleTodo with an invalid id does nothing", () => {
+        expect(toggleTodo(0)).toBeNull()
     })
 });

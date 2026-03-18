@@ -16,14 +16,14 @@ export function getTodos() {
 }
 
 export function toggleTodo(id) {
-  const todo = todos.filter((t) => t.id === id)
+  const todo = todos.find((t) => t.id === id)
   if (!todo) return null
   todo.done = !todo.done
   return todo
 }
 
 export function removeTodo(id) {
-  todos = todos.filter(t => t.id !== id);
+  todos = todos.filter(t => t.id != id);
 }
 
 export function getTodoCount() {
