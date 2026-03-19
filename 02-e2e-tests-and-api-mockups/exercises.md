@@ -159,5 +159,5 @@ Starting from `05-todo-e2e-exercises` — a todo app with unit and integration t
 - Click again — verify that the `done` class is removed
 
 
-Run `npm run test:e2e` — all 5 e2e tests should pass
+Run `npm run test:e2e` — all 5 e2e tests should pass <br>
 Run `npm test` — all tests (unit, integration, and e2e) should pass
