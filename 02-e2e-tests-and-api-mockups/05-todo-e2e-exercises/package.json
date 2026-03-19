@@ -1,24 +1,24 @@
 {
-  "name": "04-api-tests",
+  "name": "04-todo-tests",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "vitest run && npm run test:e2e",
     "test:e2e": "vite build && npx playwright test",
-    "lint": "eslint src/",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint src/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@playwright/test": "^1.58.2",
+    "@playwright/test": "^1.52.0",
     "eslint": "^10.0.3",
     "globals": "^17.4.0",
     "jsdom": "^29.0.0",
-    "vite": "^8.0.0",
+    "vite": "^6.3.5",
     "vitest": "^4.1.0"
   }
 }

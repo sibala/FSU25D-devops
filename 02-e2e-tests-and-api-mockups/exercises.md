@@ -110,3 +110,51 @@ fetch.mockResolvedValue({
 ### f) Run and verify
 - Run `npm test` — all tests (unit, integration, and e2e) should pass
 - Run `npm run lint` — no errors should be reported
+
+
+## Exercise 05-todo-e2e-exercises
+Starting from `05-todo-e2e-exercises` — en todo-app med unit- och integrationstester redan på plats. Din uppgift är att skriva Playwright e2e-tester som testar appen i en riktig webbläsare, utan mockning.
+
+> **Tips:** Använd [playwright-cheatsheet.md](playwright-cheatsheet.md) som referens när du skriver testerna!
+
+### a) Setup
+- Kör `npm install` och `npx playwright install chromium`
+- Projektet har redan `playwright.config.js` och ett `test:e2e`-script redo — du behöver bara skapa testfilen
+
+### b) Skapa testfilen
+- Skapa `tests/e2e/app.e2e.test.js`
+- Importera `test` och `expect` från `@playwright/test`
+- Lägg till en `beforeEach`-hook som navigerar till `"/"`
+
+### c) Test: Lägga till en todo
+- Fyll i inputfältet `#todo-input` med en text
+- Klicka på submit-knappen
+- Verifiera att det finns 1 `.todo-item` i listan
+- Verifiera att `.todo-text` visar rätt text
+
+### d) Test: Lägga till flera todos
+- Lägg till 3 todos
+- Verifiera att det finns 3 `.todo-item` i listan
+- Verifiera att varje todo har rätt text (använd `.nth()`)
+
+### e) Test: Ta bort en todo
+- Lägg till 2 todos
+- Klicka på `.todo-remove`-knappen på den första
+- Verifiera att det bara finns 1 todo kvar
+- Verifiera att det är rätt todo som finns kvar
+
+### f) Test: Rensa alla
+- Lägg till 2 todos
+- Klicka på `#clear-btn`
+- Verifiera att listan är tom (0 `.todo-item`)
+
+### g) Test: Toggla done
+- Lägg till en todo
+- Verifiera att `.todo-item` inte har klassen `done`
+- Klicka på `.todo-done`-checkboxen
+- Verifiera att `.todo-item` har klassen `done`
+- Klicka igen — verifiera att klassen `done` försvinner
+
+### h) Kör och verifiera
+- Kör `npm run test:e2e` — alla 5 e2e-tester ska passera
+- Kör `npm test` — alla tester (unit, integration, e2e) ska passera
