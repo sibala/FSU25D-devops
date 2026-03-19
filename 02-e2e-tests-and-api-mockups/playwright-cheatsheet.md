@@ -210,15 +210,5 @@ Start with these pages from the [Playwright docs](https://playwright.dev/docs/in
 | **Locators** | https://playwright.dev/docs/locators | All locator strategies (CSS, role, text, etc.) |
 | **Actions** | https://playwright.dev/docs/input | `fill`, `click`, `check`, `selectOption`, and more |
 | **Assertions** | https://playwright.dev/docs/test-assertions | Full list of web-first assertions (`toHaveText`, `toBeVisible`, etc.) |
-| **Auto-waiting** | https://playwright.dev/docs/actionability | How Playwright waits before acting — critical to understand |
 | **Test hooks** | https://playwright.dev/docs/api/class-test#test-before-each | `beforeEach`, `afterEach`, `beforeAll`, `afterAll` |
 | **Best Practices** | https://playwright.dev/docs/best-practices | Recommended patterns and anti-patterns |
-
-### Suggested reading order
-
-1. **Getting Started** — run your first test
-2. **Locators** — understand how to find elements
-3. **Auto-waiting** — understand *why* you rarely need manual waits
-4. **Actions** — learn the interaction API
-5. **Assertions** — learn the full assertion API (especially the difference between retrying and non-retrying assertions)
-6. **Best Practices** — level up your test quality
