@@ -119,6 +119,7 @@ fetch.mockResolvedValue({
 Starting from `05-todo-e2e-exercises` — a todo app with unit and integration tests already in place. Your task is to write Playwright e2e tests that test the app in a real browser, without mocking.
 
 > **Tips:** Use [playwright-cheatsheet.md](playwright-cheatsheet.md) as a reference when writing your tests!
+
 Run `npm install`. The project already has `playwright.config.js` and a `test:e2e` script ready — you only need to create the test file
 
 ### a) Create the test file
