@@ -120,7 +120,7 @@ Starting from `05-todo-e2e-exercises` — a todo app with unit and integration t
 
 > **Tips:** Use [playwright-cheatsheet.md](playwright-cheatsheet.md) as a reference when writing your tests!
 
-Run `npm install`. The project already has `playwright.config.js` and a `test:e2e` script ready — you only need to create the test file
+Run `npm install`. The project already has `playwright.config.js` and a `test:e2e` script ready
 
 ### a) Create the test file
 - Create `tests/e2e/app.e2e.test.js`
