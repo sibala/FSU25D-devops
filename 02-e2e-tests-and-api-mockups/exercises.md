@@ -120,38 +120,36 @@ Starting from `05-todo-e2e-exercises` — a todo app with unit and integration t
 
 > **Tips:** Use [playwright-cheatsheet.md](playwright-cheatsheet.md) as a reference when writing your tests!
 
-### a) Setup
-- Run `npm install` and `npx playwright install chromium`
-- The project already has `playwright.config.js` and a `test:e2e` script ready — you only need to create the test file
+- Run `npm install`. The project already has `playwright.config.js` and a `test:e2e` script ready — you only need to create the test file
 
-### b) Create the test file
+### a) Create the test file
 - Create `tests/e2e/app.e2e.test.js`
 - Import `test` and `expect` from `@playwright/test`
 - Add a `beforeEach` hook that navigates to `"/"`
 
-### c) Test: Add a todo
+### b) Test: Add a todo
 - Fill in the input field `#todo-input` with a text
 - Click the submit button
 - Verify that there is 1 `.todo-item` in the list
 - Verify that `.todo-text` shows the correct text
 
-### d) Test: Add multiple todos
+### c) Test: Add multiple todos
 - Add 3 todos
 - Verify that there are 3 `.todo-item` elements in the list
 - Verify that each todo has the correct text (use `.nth()`)
 
-### e) Test: Remove a todo
+### d) Test: Remove a todo
 - Add 2 todos
 - Click the `.todo-remove` button on the first one
 - Verify that only 1 todo remains
 - Verify that the correct todo remains
 
-### f) Test: Clear all
+### e) Test: Clear all
 - Add 2 todos
 - Click `#clear-btn`
 - Verify that the list is empty (0 `.todo-item`)
 
-### g) Test: Toggle done
+### f) Test: Toggle done
 - Add a todo
 - Verify that `.todo-item` does not have the class `done`
 - Click the `.todo-done` checkbox
