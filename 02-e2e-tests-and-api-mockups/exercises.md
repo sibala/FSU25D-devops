@@ -116,48 +116,48 @@ fetch.mockResolvedValue({
 
 
 ## Exercise 05-todo-e2e-exercises
-Starting from `05-todo-e2e-exercises` — en todo-app med unit- och integrationstester redan på plats. Din uppgift är att skriva Playwright e2e-tester som testar appen i en riktig webbläsare, utan mockning.
+Starting from `05-todo-e2e-exercises` — a todo app with unit and integration tests already in place. Your task is to write Playwright e2e tests that test the app in a real browser, without mocking.
 
-> **Tips:** Använd [playwright-cheatsheet.md](playwright-cheatsheet.md) som referens när du skriver testerna!
+> **Tips:** Use [playwright-cheatsheet.md](playwright-cheatsheet.md) as a reference when writing your tests!
 
 ### a) Setup
-- Kör `npm install` och `npx playwright install chromium`
-- Projektet har redan `playwright.config.js` och ett `test:e2e`-script redo — du behöver bara skapa testfilen
+- Run `npm install` and `npx playwright install chromium`
+- The project already has `playwright.config.js` and a `test:e2e` script ready — you only need to create the test file
 
-### b) Skapa testfilen
-- Skapa `tests/e2e/app.e2e.test.js`
-- Importera `test` och `expect` från `@playwright/test`
-- Lägg till en `beforeEach`-hook som navigerar till `"/"`
+### b) Create the test file
+- Create `tests/e2e/app.e2e.test.js`
+- Import `test` and `expect` from `@playwright/test`
+- Add a `beforeEach` hook that navigates to `"/"`
 
-### c) Test: Lägga till en todo
-- Fyll i inputfältet `#todo-input` med en text
-- Klicka på submit-knappen
-- Verifiera att det finns 1 `.todo-item` i listan
-- Verifiera att `.todo-text` visar rätt text
+### c) Test: Add a todo
+- Fill in the input field `#todo-input` with a text
+- Click the submit button
+- Verify that there is 1 `.todo-item` in the list
+- Verify that `.todo-text` shows the correct text
 
-### d) Test: Lägga till flera todos
-- Lägg till 3 todos
-- Verifiera att det finns 3 `.todo-item` i listan
-- Verifiera att varje todo har rätt text (använd `.nth()`)
+### d) Test: Add multiple todos
+- Add 3 todos
+- Verify that there are 3 `.todo-item` elements in the list
+- Verify that each todo has the correct text (use `.nth()`)
 
-### e) Test: Ta bort en todo
-- Lägg till 2 todos
-- Klicka på `.todo-remove`-knappen på den första
-- Verifiera att det bara finns 1 todo kvar
-- Verifiera att det är rätt todo som finns kvar
+### e) Test: Remove a todo
+- Add 2 todos
+- Click the `.todo-remove` button on the first one
+- Verify that only 1 todo remains
+- Verify that the correct todo remains
 
-### f) Test: Rensa alla
-- Lägg till 2 todos
-- Klicka på `#clear-btn`
-- Verifiera att listan är tom (0 `.todo-item`)
+### f) Test: Clear all
+- Add 2 todos
+- Click `#clear-btn`
+- Verify that the list is empty (0 `.todo-item`)
 
-### g) Test: Toggla done
-- Lägg till en todo
-- Verifiera att `.todo-item` inte har klassen `done`
-- Klicka på `.todo-done`-checkboxen
-- Verifiera att `.todo-item` har klassen `done`
-- Klicka igen — verifiera att klassen `done` försvinner
+### g) Test: Toggle done
+- Add a todo
+- Verify that `.todo-item` does not have the class `done`
+- Click the `.todo-done` checkbox
+- Verify that `.todo-item` has the class `done`
+- Click again — verify that the `done` class is removed
 
-### h) Kör och verifiera
-- Kör `npm run test:e2e` — alla 5 e2e-tester ska passera
-- Kör `npm test` — alla tester (unit, integration, e2e) ska passera
+
+Run `npm run test:e2e` — all 5 e2e tests should pass
+Run `npm test` — all tests (unit, integration, and e2e) should pass
