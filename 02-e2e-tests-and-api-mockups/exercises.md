@@ -100,6 +100,9 @@ fetch.mockResolvedValue({
   - Full flow: fetch posts → store in model → render in view → verify DOM
 
 ### e) E2e tests
+
+> **Tips:** Använd [playwright-cheatsheet.md](playwright-cheatsheet.md) som referens när du skriver testerna!
+
 - Create `tests/e2e/app.e2e.test.js`
 - Import `test` and `expect` from `@playwright/test`
 - No mocking — tests run against the real DummyJSON API
