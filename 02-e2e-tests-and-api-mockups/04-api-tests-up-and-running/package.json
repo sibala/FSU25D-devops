@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "vitest run && npm run test:e2e",
+    "test": "vitest run --coverage && npm run test:e2e",
     "test:e2e": "vite build && npx playwright test",
     "lint": "eslint src/",
     "preview": "vite preview"
