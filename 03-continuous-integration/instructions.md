@@ -3,7 +3,7 @@
 ## We will cover
 - CI setup with Github Actions [getting-started-ci-cd.md](getting-started-ci-cd.md)
 - CD setup with Vercel [getting-started-ci-cd.md](getting-started-ci-cd.md)
-- Solution for [04-api-tests-solutions-with-CI/CD](04-api-tests-solutions-with-CI-CD)
+- Solution for [04-api-tests-solutions-with-CI-CD](04-api-tests-solutions-with-CI-CD)
 - How to recognize what to test in unit, integration, e2e
     - Install package `npm i -D @vitest/coverage-v8`
     - Add the flag `--coverage` in the "test"-script, in package.json, Like så `"test": "vitest run --coverage && npm run test:e2e"`
