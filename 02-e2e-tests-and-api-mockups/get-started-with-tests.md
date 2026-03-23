@@ -17,6 +17,8 @@ Flag descriptions:
 | `npm install -D @playwright/test` | Installs Playwright for e2e tests |
 | `npm install -D vite` | Installs Vite for building and previewing the app |
 | `npx playwright install chromium` | Downloads the Chromium browser for Playwright |
+| `npm i -D @vitest/coverage-v8` | Install Vitestcode coverage |
+
 
 Package descriptions:
 - **vitest** — Test framework for running unit and integration tests. https://www.npmjs.com/package/vitest
@@ -30,7 +32,7 @@ Package descriptions:
 Add scripts:
 ```json
 "scripts": {
-  "test": "vitest run",
+  "test": "vitest run --coverage && npm run test:e2e",
   "test:e2e": "vite build && npx playwright test",
   "lint": "eslint src/",
   "preview": "vite preview"
