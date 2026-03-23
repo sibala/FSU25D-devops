@@ -176,6 +176,21 @@ await expect(page).toHaveTitle("My Blog");
 
 ---
 
+## `await` outside vs `await` inside `expect`
+
+`await` is needed when talking to the browser. Once a value is resolved into memory, no `await` is needed.
+
+```js
+await expect(options.first()).toHaveText("Alla")
+// toHaveText talks to the browser (polls/retries) — await the whole assertion
+
+expect(await options.count()).toBeGreaterThan(1)
+// options.count() talks to the browser — await it to get a number
+// toBeGreaterThan just compares two numbers in memory — no await needed
+```
+
+---
+
 ## Reading values from the page
 
 Sometimes you want to read a value and use it in a regular assertion or loop. In that case, read the value with `await` without `expect`.
