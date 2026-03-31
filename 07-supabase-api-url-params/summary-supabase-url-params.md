@@ -10,16 +10,10 @@ All patterns used to query Supabase via the REST API (fetch / plain URL).
 https://<project>.supabase.co/rest/v1/<table>?<params>
 ```
 
-Always include the API key as a header or query param:
-
-```js
-const headers = { apikey: API_KEY, Authorization: `Bearer ${API_KEY}` };
-```
-
-Or as a query param (simpler, less secure):
+Always include the API key as a query param:
 
 ```
-?apikey=YOUR_KEY
+?apikey=YOUR_ANON_KEY
 ```
 
 ---
@@ -146,13 +140,11 @@ Use the `or` param:
 
 ## Return a single row
 
-Add the `Accept` header to get a single object instead of an array:
+Add `&limit=1` and destructure the first element:
 
 ```js
-const res = await fetch(`${BASE_URL}?id=eq.${id}&select=*`, {
-  headers: { ...headers, Accept: "application/vnd.pgrst.object+json" },
-});
-const item = await res.json(); // object, not array
+const res = await fetch(`${BASE_URL}?id=eq.${id}&select=*&apikey=YOUR_ANON_KEY`);
+const [item] = await res.json(); // grab first (and only) object from array
 ```
 
 ---
@@ -164,8 +156,7 @@ const BASE_URL = 'https://<project>.supabase.co/rest/v1/bakeries';
 const API_KEY  = 'your-anon-key';
 
 const res = await fetch(
-  `${BASE_URL}?select=id,title,menus(name,price)&title=ilike.*bageri*&order=title.asc&limit=10`,
-  { headers: { apikey: API_KEY } }
+  `${BASE_URL}?select=id,title,menus(name,price)&title=ilike.*bageri*&order=title.asc&limit=10&apikey=${API_KEY}`
 );
 const data = await res.json(); // array of bakery objects, each with a menus array
 ```
